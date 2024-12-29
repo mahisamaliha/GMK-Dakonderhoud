@@ -1,0 +1,216 @@
+// Add variables here
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Carousel CSS
+/*************** hero_section ***************/
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: $secondaryColor;
+}
+
+.owl {
+    &-carousel {
+        .owl-item {
+            img {
+                width: auto;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+    &-theme {
+        .owl-nav {
+            margin: 0;
+            [class*=owl-] {
+
+                margin: 0;
+                width: 50px;
+                height: 50px;
+                color: $secondaryColor !important;
+                background-color: #ffffff !important;
+                border-radius: 50%;
+                box-shadow: 0px 0px 55px rgba(228, 228, 228, 0.55);
+                .la-angle-right:before {
+                    content: "\f105";
+                    font-size: 16px;
+                }
+                .la-angle-left:before {
+                    content: "\f104";
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+// Slider Carousel
+
+.slider_section_img {
+    .owl-carousel {
+      .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 400px;
+        height: 400px;
+        perspective: 1000px;
+        margin: 0 10px;
+
+        &.active.center img {
+            transform: scale(1.2) translateZ(100px);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.5s;
+          }
+      }
+    }
+
+  .owl{
+    &-stage {
+        display: flex;
+        align-items: center;
+      }
+    &-nav {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+
+        button {
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+    }
+    &-dots {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+
+        .owl-dot {
+            span {
+                width: 12px;
+                height: 12px;
+                background: #ddd;
+                display: block;
+                border-radius: 50%;
+                margin: 0 5px;
+                transition: background 0.3s;
+            }
+            &.active span {
+                background: #555;
+            }
+        }
+    }
+  }
+}
+
+// Responsive
+@include breakpoint-max(1199px) {
+    .owl {
+        &-theme {
+            .owl-nav {
+                [class*=owl-] {
+                    width: 45px;
+                    height: 45px;
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint-max(991px) {
+    .owl {
+        &-theme {
+            .owl-nav {
+                margin-top: 30px;
+                [class*=owl-] {
+                    margin-left: 5px;
+                    margin-right: 5px;
+                }
+            }
+            
+        }
+    }
+}
+
+@include breakpoint-min(992px) {
+    .owl {
+        &-theme {
+            .owl-nav {
+                [class*=owl-] {
+                    position: absolute;
+                    top: 30%;
+                }
+                .owl {
+                    &-prev {
+                        left: -3vw!important;
+                    }
+                    &-next {
+                        right: -3vw!important;
+                    }
+                }
+            }
+        }
+    }
+}
+@include breakpoint-min(992px) {
+    .owl {
+        &-theme {
+            .owl-nav {
+                .owl {
+                    &-prev {
+                        left: -2.5vw!important;
+                    }
+                    &-next {
+                        right: -2.5vw!important;
+                    }
+                }
+            }
+        }
+    }
+}
+@include breakpoint-min(1100px) {
+    .owl {
+        &-theme {
+            .owl-nav {
+                .owl {
+                    &-prev {
+                        left: -2vw!important;
+                    }
+                    &-next {
+                        right: -2vw!important;
+                    }
+                }
+            }
+        }
+    }
+}
+@include breakpoint-min(1430px) {
+    .owl {
+        &-theme {
+            .owl-nav {
+                .owl {
+                    &-prev {
+                        left: -4vw!important;
+                    }
+                    &-next {
+                        right: -4vw!important;
+                    }
+                }
+            }
+        }
+    }
+}

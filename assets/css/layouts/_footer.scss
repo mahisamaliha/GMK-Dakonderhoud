@@ -1,0 +1,52 @@
+// Add variables here
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Add styles here
+.footer_section {
+    &_top {
+        border-bottom: 1px solid $primaryColor;
+        display: flex;
+        color: $primaryColor;
+        font-family: 'Times New Roman', Times, serif;
+        align-items: center;
+        &_left {
+            font-size: 65px;
+        }
+        &_right {
+            font-size: 300px;
+            font-weight: 700;
+        }
+    }
+    &_bottom {
+        display: flex;
+        justify-content: space-between;
+        color: $primaryColor;
+        font-size: 20px;
+        font-weight: 400;
+    }
+}
+
+
+// RESPONSIVE STARTS
+
+
+@include breakpoint-max(1199px) {
+
+}
+
+@include breakpoint-max(991px) {
+    
+}
+
+@include breakpoint-max(767px) {
+    
+}
+
+@include breakpoint-max(575px) {
+    
+}
+
+@include breakpoint-max(480px) {
+    
+}

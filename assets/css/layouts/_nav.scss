@@ -1,0 +1,42 @@
+// Add variables here
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.nav_bar{
+    position: absolute; 
+    top: 60px;
+    left: 60px;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    h1{
+        // font-family: 'Times New Roman', Times, serif;
+        font-weight: 700;
+        font-size: 35px;
+        color: #ffffff; /* Matches the hero text for better visibility */
+    }
+    a{
+        img {
+            width: 50px; /* Adjust logo size if needed */
+            height: auto;
+        }
+    }
+}
+
+@include breakpoint-max(991px) {
+    
+}
+
+@include breakpoint-max(767px) {
+}
+
+
+@include breakpoint-min(992px) {
+
+}
+
+@include breakpoint-min(1200px) {
+
+}
